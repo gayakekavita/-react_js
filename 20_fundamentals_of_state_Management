@@ -1,0 +1,45 @@
+--We use  useState() function to create state in react.
+--State Management:: 
+      Deciding when to create pieces of state , what types of state are necessary , where to place each piece of state and how data flows through the app.
+
+-- Types of state
+   1.Global state
+         - State that might need by many components
+         - Shared state is accessible by every component in the entire application.
+   2.local state 
+         - Local state is  a state needed by one or few components.
+         -State that is defined in a component and only that component and child component have access to it.(by passing via props)
+
+
+--When and where to place the state::
+     1. Need to store data  
+         -- Will data change at some point ?
+               1. If yes:
+                         Can be coputed from existing state/props?
+                               1. if No 
+                                     Should it re-render the component ? 
+                                          1. Yes
+                                              Place a new piece of state in component
+                                                     -- Only used by this component ?
+                                                         1. If yes ::
+                                                                Leave in component.
+                                                         2.If no
+                                                              Also used by child component ?
+                                                                 1. YEs 
+                                                                    Pass to child via props
+                                                                 2. If NO::
+                                                                     Used by one or few siblings component ?
+                                                                        1. If yes::
+                                                                              Lift state up to first common parent 
+                                           2. No
+                                                  Ref(useRef)
+                                2. if yes ::
+                                    Derive state 
+
+               2. If No :
+                   Use   Regular const variable.
+
+
+
+
+                 
